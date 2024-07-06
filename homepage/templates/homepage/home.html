@@ -1,0 +1,42 @@
+<!-- portfolio_app/templates/portfolio_app/home.html -->
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Euan Judd - Machine Learning SaaS Portfolio</title>
+    <link href="{% static 'css/tailwind.css' %}" rel="stylesheet">
+</head>
+<body class="bg-base-bg text-base-content">
+    <header class="text-center py-12">
+        <h1 class="text-6xl font-black mb-4 tracking-tight">Euan Judd</h1>
+        <p class="text-xl text-base-content-secondary">Machine Learning SaaS Portfolio</p>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-4">
+        <section class="bg-white rounded-lg shadow-md p-8 mb-8">
+            <h2 class="text-4xl font-black mb-4 tracking-tight">AI-Powered Text Summarizer</h2>
+            <p class="mb-4">An advanced NLP-based tool that automatically generates concise summaries of long-form content, helping users save time and improve comprehension.</p>
+            <a href="#" class="inline-block bg-primary-bg text-primary-text px-6 py-2 rounded-md hover:bg-opacity-90 transition-colors">Learn More</a>
+        </section>
+
+        <section class="bg-white rounded-lg shadow-md p-8 mb-8">
+            <h2 class="text-4xl font-black mb-4 tracking-tight">Predictive Maintenance Platform</h2>
+            <p class="mb-4">A machine learning system that analyzes sensor data from industrial equipment to predict potential failures, allowing for proactive maintenance and reduced downtime.</p>
+            <a href="#" class="inline-block bg-primary-bg text-primary-text px-6 py-2 rounded-md hover:bg-opacity-90 transition-colors">Learn More</a>
+        </section>
+
+        <section class="bg-white rounded-lg shadow-md p-8 mb-8">
+            <h2 class="text-4xl font-black mb-4 tracking-tight">Personalized Product Recommendation Engine</h2>
+            <p class="mb-4">A sophisticated recommendation system that uses collaborative filtering and deep learning to provide highly accurate product suggestions for e-commerce platforms.</p>
+            <a href="#" class="inline-block bg-primary-bg text-primary-text px-6 py-2 rounded-md hover:bg-opacity-90 transition-colors">Learn More</a>
+        </section>
+    </main>
+
+    <footer class="text-center py-8 text-base-content-secondary">
+        <p>&copy; 2024 Euan Judd. All rights reserved.</p>
+    </footer>
+</body>
+</html>

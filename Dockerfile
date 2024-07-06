@@ -12,8 +12,13 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     gcc \
     python3-dev \ 
     ffmpeg \
+    curl \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
+
+# Install Node.js and npm
+RUN curl -fsSL https://deb.nodesource.com/setup_16.x | bash - && \
+    apt-get install -y nodejs
 
 # Install pip requirements
 COPY requirements.txt .
@@ -21,6 +26,13 @@ RUN python -m pip install --no-cache-dir -r requirements.txt
 
 WORKDIR /app
 COPY . /app
+
+# Install TailwindCSS dependencies
+WORKDIR /app/theme/static_src
+RUN npm install
+
+# Build TailwindCSS
+RUN npx tailwindcss -i ./src/styles.css -o ../static/styles.css --minify
 
 EXPOSE 5000
 
@@ -30,4 +42,4 @@ RUN adduser -u 5678 --disabled-password --gecos "" appuser && chown -R appuser /
 USER appuser
 
 # Run gunicorn
-CMD ["gunicorn", "--bind", "0.0.0.0:80", "myproject.wsgi:application"]
+# CMD ["gunicorn", "--bind", "0.0.0.0:80", "myproject.wsgi:application"]
