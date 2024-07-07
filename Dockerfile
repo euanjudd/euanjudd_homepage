@@ -34,6 +34,8 @@ RUN npm install
 # Build TailwindCSS
 RUN npx tailwindcss -i ./src/styles.css -o ../static/styles.css --minify
 
+WORKDIR /app
+
 EXPOSE 5000
 
 # Creates a non-root user with an explicit UID and adds permission to access the /app folder
