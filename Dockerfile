@@ -37,7 +37,7 @@ RUN npx tailwindcss -i ./src/styles.css -o ../static/styles.css --minify
 
 WORKDIR /app
 
-EXPOSE 80
+EXPOSE 8000
 
 # Run gunicorn
 # CMD ["gunicorn", "--bind", "0.0.0.0:80", "myproject.wsgi:application"]

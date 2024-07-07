@@ -2,10 +2,15 @@
 // README at: https://github.com/devcontainers/templates/tree/main/src/docker-existing-dockerfile
 {
     "name": "Cite Docker Py:3.12",
-    "build": {
-        "context": "..",
-        "dockerfile": "../Dockerfile"
-    },
+    "dockerComposeFile": [
+        "../docker-compose.yml",
+        "../docker-compose.override.yml"
+    ],
+    "service": "web",
+    // "build": {
+    //     "context": "..",
+    //     "dockerfile": "../Dockerfile"
+    // },
     "workspaceFolder": "/app",
     "mounts": [
         "source=${localWorkspaceFolder},target=/app,type=bind,consistency=cached"

@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    volumes:
+      - static_volume:/app/static
+      - media_volume:/app/media
+    expose:
+      - "8000"  # Gunicorn will be accessed via Nginx; no direct external access
+    environment:
+      - DJANGO_ENVIRONMENT=production  # Ensure production is the default environment
+    entrypoint: ["/entrypoint.sh"]
+    command: ["start"]
+
+  nginx:
+    build:
+      context: ./nginx
+    volumes:
+      - static_volume:/app/static
+      - media_volume:/app/media
+    ports:
+      - "80:80"
+      - "443:443"
+    depends_on:
+      - web
+
+volumes:
+  static_volume:
+  media_volume:
+

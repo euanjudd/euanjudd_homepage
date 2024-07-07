@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  web:
+    ports:
+      - "8000:8000"  # Map Django's development server port to the host
+    environment:
+      - DJANGO_ENVIRONMENT=development  # Override to set the environment to development
+
+  nginx:
+    ports:
+      - "8080:80"  # Map Nginx to a non-standard port if you need it for development

@@ -5,5 +5,5 @@ if [ "$DJANGO_ENVIRONMENT" = "development" ]; then
     exec python manage.py runserver 0.0.0.0:8000
 else
     echo "Running in production mode"
-    exec gunicorn --bind 0.0.0.0:80 myproject.wsgi:application
+    exec gunicorn --bind 0.0.0.0:8000 myproject.wsgi:application
 fi
