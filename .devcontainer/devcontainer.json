@@ -10,6 +10,7 @@
     "mounts": [
         "source=${localWorkspaceFolder},target=/app,type=bind,consistency=cached"
     ],
+    "remoteUser": "appuser",
     "customizations": {
         "vscode": {
             "settings": {
@@ -25,7 +26,10 @@
     "runArgs": [
         "--env-file", ".env"
     ],
-    "forwardPorts": [],
+    "forwardPorts": [8000],
+    "remoteEnv": {
+        "DJANGO_ENVIRONMENT": "development"
+    },
     "postCreateCommand": "echo 'Container is ready!'",
-    "remoteUser": "appuser"
+    "updateRemoteUserUID": true,
 }

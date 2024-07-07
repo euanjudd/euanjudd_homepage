@@ -26,11 +26,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.getenv('DJANGO_SECRET_KEY')
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = os.getenv('DJANGO_ALLOWED_HOSTS', '').split(',')
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -74,8 +69,20 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'myproject.wsgi.application'
+# Default to production environment
+ENVIRONMENT = os.environ.get('DJANGO_ENVIRONMENT', 'production')
 
+if ENVIRONMENT == 'production':
+    # Use Gunicorn in production
+    DEBUG = False
+    ALLOWED_HOSTS = os.getenv('DJANGO_ALLOWED_HOSTS', '').split(',')
+else:
+    # Use Django's built-in server for development
+    # SECURITY WARNING: don't run with debug turned on in production!
+    DEBUG = True
+    ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+    
+WSGI_APPLICATION = 'myproject.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases

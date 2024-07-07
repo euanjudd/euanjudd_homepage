@@ -20,11 +20,12 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 RUN curl -fsSL https://deb.nodesource.com/setup_16.x | bash - && \
     apt-get install -y nodejs
 
+WORKDIR /app
+
 # Install pip requirements
 COPY requirements.txt .
 RUN python -m pip install --no-cache-dir -r requirements.txt
 
-WORKDIR /app
 COPY . /app
 
 # Install TailwindCSS dependencies
@@ -36,12 +37,23 @@ RUN npx tailwindcss -i ./src/styles.css -o ../static/styles.css --minify
 
 WORKDIR /app
 
-EXPOSE 5000
+EXPOSE 80
+
+# Run gunicorn
+# CMD ["gunicorn", "--bind", "0.0.0.0:80", "myproject.wsgi:application"]
+
+# Use an entrypoint script
+COPY entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
 
 # Creates a non-root user with an explicit UID and adds permission to access the /app folder
 # For more info, please refer to https://aka.ms/vscode-docker-python-configure-containers
 RUN adduser -u 5678 --disabled-password --gecos "" appuser && chown -R appuser /app
 USER appuser
 
-# Run gunicorn
-CMD ["gunicorn", "--bind", "0.0.0.0:80", "myproject.wsgi:application"]
+# Default to production, using gunicorn (dev uses Django's built-in server)
+ENV DJANGO_ENVIRONMENT=production
+
+# The CMD will be passed to the entrypoint script
+ENTRYPOINT ["/entrypoint.sh"]
+CMD ["start"]
