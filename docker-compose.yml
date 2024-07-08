@@ -8,12 +8,15 @@ services:
       - media_volume:/app/media
     expose:
       - "8000"  # Gunicorn will be accessed via Nginx; no direct external access
-    env_file:
-      - .env
     # environment:
     #   - DJANGO_ENVIRONMENT=production  # Ensure production is the default environment
     # entrypoint: ["/entrypoint.sh"]
     # command: ["start"]
+    env_file:
+      - .env
+    # environment:
+    #   - DJANGO_ENVIRONMENT=${DJANGO_ENVIRONMENT:-development}  # Provide default value
+    #   - DJANGO_ALLOWED_HOSTS=${DJANGO_ALLOWED_HOSTS:-localhost}
 
   nginx:
     build:
