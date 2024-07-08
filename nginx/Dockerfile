@@ -6,8 +6,11 @@ RUN rm /etc/nginx/conf.d/default.conf
 # Copy the custom settings nginx.conf to the container
 COPY nginx.conf /etc/nginx/conf.d/
 
+# Create directories for SSL certificates
+RUN mkdir -p /etc/letsencrypt/live/euanjudd.com
+
 # Expose ports for HTTP and HTTPS
 EXPOSE 80 443
 
-# run nginx in foreground as docker may think it had stopped and shut it down if running in background
+# Run nginx in foreground
 CMD ["nginx", "-g", "daemon off;"]
