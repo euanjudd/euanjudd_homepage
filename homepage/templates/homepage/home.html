@@ -1,5 +1,3 @@
-<!-- portfolio_app/templates/portfolio_app/home.html -->
-
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
@@ -10,33 +8,45 @@
     <link href="{% static 'css/tailwind.css' %}" rel="stylesheet">
 </head>
 <body class="bg-base-bg text-base-content">
-    <header class="text-center py-12">
-        <h1 class="text-6xl font-black mb-4 tracking-tight">Euan Judd</h1>
-        <p class="text-xl text-base-content-secondary">Machine Learning SaaS Portfolio</p>
+    <header class="bg-white shadow-md">
+        <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-black mb-2 tracking-tight text-primary-bg">Euan Judd</h1>
+            <p class="text-xl text-base-content-secondary">Machine Learning SaaS Portfolio</p>
+        </div>
     </header>
 
-    <main class="max-w-4xl mx-auto px-4">
-        <section class="bg-white rounded-lg shadow-md p-8 mb-8">
-            <h2 class="text-4xl font-black mb-4 tracking-tight">AI-Powered Text Summarizer</h2>
-            <p class="mb-4">An advanced NLP-based tool that automatically generates concise summaries of long-form content, helping users save time and improve comprehension.</p>
-            <a href="#" class="inline-block bg-primary-bg text-primary-text px-6 py-2 rounded-md hover:bg-opacity-90 transition-colors">Learn More</a>
-        </section>
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            <section class="bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:scale-105">
+                <div class="p-6">
+                    <h2 class="text-2xl font-black mb-4 tracking-tight text-primary-bg">AI-Powered Text Summarizer</h2>
+                    <p class="mb-4 text-base-content-secondary">An advanced NLP-based tool that automatically generates concise summaries of long-form content, helping users save time and improve comprehension.</p>
+                    <a href="#" class="inline-block bg-primary-bg text-primary-text px-6 py-2 rounded-md hover:bg-opacity-90 transition-colors">Learn More</a>
+                </div>
+            </section>
 
-        <section class="bg-white rounded-lg shadow-md p-8 mb-8">
-            <h2 class="text-4xl font-black mb-4 tracking-tight">Predictive Maintenance Platform</h2>
-            <p class="mb-4">A machine learning system that analyzes sensor data from industrial equipment to predict potential failures, allowing for proactive maintenance and reduced downtime.</p>
-            <a href="#" class="inline-block bg-primary-bg text-primary-text px-6 py-2 rounded-md hover:bg-opacity-90 transition-colors">Learn More</a>
-        </section>
+            <section class="bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:scale-105">
+                <div class="p-6">
+                    <h2 class="text-2xl font-black mb-4 tracking-tight text-primary-bg">Predictive Maintenance Platform</h2>
+                    <p class="mb-4 text-base-content-secondary">A machine learning system that analyzes sensor data from industrial equipment to predict potential failures, allowing for proactive maintenance and reduced downtime.</p>
+                    <a href="#" class="inline-block bg-primary-bg text-primary-text px-6 py-2 rounded-md hover:bg-opacity-90 transition-colors">Learn More</a>
+                </div>
+            </section>
 
-        <section class="bg-white rounded-lg shadow-md p-8 mb-8">
-            <h2 class="text-4xl font-black mb-4 tracking-tight">Personalized Product Recommendation Engine</h2>
-            <p class="mb-4">A sophisticated recommendation system that uses collaborative filtering and deep learning to provide highly accurate product suggestions for e-commerce platforms.</p>
-            <a href="#" class="inline-block bg-primary-bg text-primary-text px-6 py-2 rounded-md hover:bg-opacity-90 transition-colors">Learn More</a>
-        </section>
+            <section class="bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:scale-105">
+                <div class="p-6">
+                    <h2 class="text-2xl font-black mb-4 tracking-tight text-primary-bg">Personalized Product Recommendation Engine</h2>
+                    <p class="mb-4 text-base-content-secondary">A sophisticated recommendation system that uses collaborative filtering and deep learning to provide highly accurate product suggestions for e-commerce platforms.</p>
+                    <a href="#" class="inline-block bg-primary-bg text-primary-text px-6 py-2 rounded-md hover:bg-opacity-90 transition-colors">Learn More</a>
+                </div>
+            </section>
+        </div>
     </main>
 
-    <footer class="text-center py-8 text-base-content-secondary">
-        <p>&copy; 2024 Euan Judd. All rights reserved.</p>
+    <footer class="bg-white mt-12">
+        <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+            <p class="text-center text-base-content-secondary">&copy; 2024 Euan Judd. All rights reserved.</p>
+        </div>
     </footer>
 </body>
 </html>
