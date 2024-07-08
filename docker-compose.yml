@@ -14,9 +14,9 @@ services:
     # command: ["start"]
     env_file:
       - .env
-    # environment:
-    #   - DJANGO_ENVIRONMENT=${DJANGO_ENVIRONMENT:-development}  # Provide default value
-    #   - DJANGO_ALLOWED_HOSTS=${DJANGO_ALLOWED_HOSTS:-localhost}
+    environment:
+      - DJANGO_ENVIRONMENT=${DJANGO_ENVIRONMENT:-production}  # Provide default value
+      - DJANGO_ALLOWED_HOSTS=${DJANGO_ALLOWED_HOSTS:-localhost}
 
   nginx:
     build:
