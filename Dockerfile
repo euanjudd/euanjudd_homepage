@@ -33,7 +33,7 @@ WORKDIR /app/theme/static_src
 RUN npm install
 
 # Build TailwindCSS
-RUN npx tailwindcss -i ./src/styles.css -o ../static/styles.css --minify
+RUN npx tailwindcss -i ./theme/static_src/src/styles.css -o ./static/styles.css --minify
 
 WORKDIR /app
 
