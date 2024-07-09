@@ -38,9 +38,6 @@ RUN npx tailwindcss -i ./theme/static_src/src/styles.css -o ./static/styles.css 
 
 EXPOSE 8000
 
-# Run gunicorn
-# CMD ["gunicorn", "--bind", "0.0.0.0:80", "myproject.wsgi:application"]
-
 # Use an entrypoint script
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh

@@ -28,13 +28,10 @@
             ]
         }
     },
-    "runArgs": [
-        "--env-file", ".env"
-    ],
     "forwardPorts": [8000],
     "remoteEnv": {
         "DJANGO_ENVIRONMENT": "development"
     },
     "postCreateCommand": "echo 'Container is ready!'",
-    "updateRemoteUserUID": true,
+    "updateRemoteUserUID": true
 }
