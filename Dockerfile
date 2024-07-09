@@ -29,13 +29,10 @@ RUN python -m pip install --no-cache-dir -r requirements.txt
 COPY . /app
 
 # Install TailwindCSS dependencies
-WORKDIR /app/theme/static_src
 RUN npm install
 
 # Build TailwindCSS
 RUN npx tailwindcss -i ./theme/static_src/src/styles.css -o ./static/styles.css --minify
-
-WORKDIR /app
 
 EXPOSE 8000
 
