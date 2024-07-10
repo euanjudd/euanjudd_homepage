@@ -22,10 +22,10 @@ urlpatterns = [
     path('', include('homepage.urls')),
 ]
 
-#  Serve static files in development environment
-from django.conf import settings
-from django.conf.urls.static import static
+# #  Serve static files in development environment
+# from django.conf import settings
+# from django.conf.urls.static import static
 
-if settings.DEBUG:
-    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+# if settings.DEBUG:
+#     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 

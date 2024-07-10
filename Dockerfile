@@ -16,10 +16,6 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
-# Install Node.js and npm
-RUN curl -fsSL https://deb.nodesource.com/setup_16.x | bash - && \
-    apt-get install -y nodejs
-
 WORKDIR /app
 
 # Install pip requirements
@@ -30,7 +26,15 @@ COPY . /app
 
 # Install TailwindCSS dependencies
 WORKDIR /app/theme/static_src
+# Install Node.js and npm
+
+RUN curl -fsSL https://deb.nodesource.com/setup_16.x | bash - && \
+    apt-get install -y nodejs
+
+# Install TailwindCSS dependencies
 RUN npm install
+RUN npm run build:tailwind
+
 WORKDIR /app
 
 # Build TailwindCSS
@@ -46,6 +50,9 @@ RUN chmod +x /entrypoint.sh
 # For more info, please refer to https://aka.ms/vscode-docker-python-configure-containers
 RUN adduser -u 5678 --disabled-password --gecos "" appuser && chown -R appuser /app
 USER appuser
+
+RUN chown 5678:5678 ./static/styles.css && \
+    chmod 644 ./static/styles.css
 
 # Default to production, using gunicorn (dev uses Django's built-in server)
 ENV DJANGO_ENVIRONMENT=production
