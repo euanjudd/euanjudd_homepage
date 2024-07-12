@@ -70,12 +70,12 @@
         <header class="container mx-auto text-base-content py-2 max-w-7xl mx-auto">
             <div class="flex justify-between items-center">
                 <div class="flex items-center">
-                    <a href="{% url 'home' %}">
-                        <img src="{% static 'images/icon.png' %}" alt="Home" class="h-16">
+                    <a href="{% url 'home' %}" class="">
+                        <img src="{% static 'images/icon.png' %}" alt="Home" class="h-14">
                     </a>
                     <nav class="relative">
                         <button id="dropdownButton" aria-haspopup="true" aria-expanded="false" class="menu-text ml-8 hover:tracking-widest text-xs font-bold">
-                            Menu
+                            MENU
                         </button>
                         <div id="dropdownMenu" class="hidden absolute z-10 w-44 bg-base-bg mt-2 py-2 rounded shadow-lg">
                             <a href="{% url 'home' %}" class="block px-4 py-2 text-sm text-base-content hover:bg-gray-100">Home</a>

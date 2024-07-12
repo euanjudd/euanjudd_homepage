@@ -1,10 +1,20 @@
 {% extends 'base.html' %}
 {% block content %}
+{% load static %}
 
 <header class="container mx-auto text-base-content py-24 max-w-6xl mx-auto pb-6">
 
-    <h1 class="text-6xl md:text-7xl lg:text-8xl font-black mb-2 tracking-tight tracking-wider font-serif font-normal">Hi, my<br>name is <b>Euan</b>.</h1>
-    <p class="text-l md:text-xl lg:text-2xl text-gray-700 font-normal mt-8 mb-8">I'm a <b>machine learning engineer</b> from<br>Kent, United Kingdom.</p>
+    <div class=" gap-8">
+        <!-- <div class="col-span-2"> -->
+            <h1 class="text-6xl md:text-7xl lg:text-8xl font-black mb-2 tracking-tight tracking-wider font-serif font-normal">Hi, my<br>name is <b>Euan</b>.</h1>
+            <p class="text-l md:text-xl lg:text-2xl text-gray-700 font-normal mt-8 mb-8">I'm a <b>machine learning engineer</b> from<br>Kent, United Kingdom.</p>
+        <!-- </div> -->
+        <!-- <div class="md:col-span-1 hidden md:flex justify-center items-center">
+            <div class="aspect-w-1 aspect-h-1">
+                <img src="{% static 'images/icon.png' %}" alt="Home" class="h-72">
+            </div>
+        </div> -->
+    </div>
 
     <a href="https://www.linkedin.com/in/euan-judd-749b04116/" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-gray-600 ml-2 fa-2x">
         <i class="fab fa-linkedin"></i>
@@ -42,7 +52,7 @@
             <section class="bg-highlight-bg hover:bg-highlight-hover-bg rounded-xl shadow-md overflow-hidden transition-transform border border-border-color-default duration-300 hover:scale-105">
                 <div class="p-6">
                     <h2 class="text-2xl font-black text-base-content">ChurnReduce</h2>
-                    <p class="text-base-content-secondary">Predict churn, enhance retention, maximize ROI.</p>
+                    <p class="text-base-content-secondary">Predict churn, enhance retention, maximise ROI.</p>
                     <!-- <p class="text-base-content-secondary text-sm mt-2">github.com</p> -->
                     <!-- <div class="mt-2"><span class="bg-primary-bg text-primary-text text-sm rounded-full px-2 py-1 hover:bg-primary-hover-bg">github.com</span></div> -->
                     <!-- <a href="#" class="inline-block bg-primary-bg text-primary-text px-6 py-2 rounded-xl hover:bg-primary-hover-bg transition-colors text-sm">Visit CitationEngine</a> -->
