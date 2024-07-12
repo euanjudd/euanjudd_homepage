@@ -43,9 +43,6 @@
                     //     'highlight-text': '#cfcfcf',        // Light gray
                     //     'border-color-default': '#0f0f0f',  // Almost black
                     // },
-                    fontFamily: {
-                        'roboto': ['Roboto', 'sans-serif'],
-                    },
                     fontSize: {
                         'base': '16px',
                     },
@@ -66,7 +63,7 @@
     </script>
 </head>
 
-<body class="bg-heighlight-bg text-base-content font-normal text-base leading-normal p-5">
+<body class="bg-heighlight-bg text-base-content font-normal text-base leading-normal p-5 font-sans">
 
     <div class="bg-base-bg p-6">
 
@@ -74,7 +71,7 @@
             <div class="flex justify-between items-center">
                 <div class="flex items-center">
                     <a href="{% url 'home' %}">
-                        <img src="{% static 'images/home_icon.png' %}" alt="Home" class="h-16">
+                        <img src="{% static 'images/icon.png' %}" alt="Home" class="h-16">
                     </a>
                     <span class="menu-text ml-8 hover:tracking-widest text-xs font-bold">
                         MENU
