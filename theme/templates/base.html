@@ -61,13 +61,34 @@
             }
         }
     </script>
+        <style>
+            .vertical-text {
+                writing-mode: vertical-rl;
+                transform: rotate(180deg);
+            }
+            .fixed-bottom {
+                position: fixed;
+                bottom: 86px;
+                right: 0;
+            }
+            .fixed-bottom-line {
+                position: fixed;
+                bottom: 22px;
+                right: 3px;
+            }
+            .vertical-line {
+                width: 1px;
+                height: 50px; 
+                background-color: black; 
+            }
+        </style>
 </head>
 
 <body class="bg-heighlight-bg text-base-content font-normal text-base leading-normal p-5 font-sans">
 
     <div class="bg-base-bg p-6">
 
-        <header class="container mx-auto text-base-content py-2 max-w-7xl mx-auto">
+        <header class="container mx-auto text-base-content py-2 max-w-7xl mx-auto sticky top-0">
             <div class="flex justify-between items-center">
                 <div class="flex items-center">
                     <a href="{% url 'home' %}" class="">
@@ -89,7 +110,16 @@
                 </a>
             </div>
         </header>
-        
+
+        <div class="fixed-bottom-line flex p-7 items-end hidden lg:flex">
+            <div class="vertical-line bg-policy-text"></div>
+        </div>
+
+        <div class="fixed-bottom flex p-6 items-end hidden lg:flex">
+            <div class="vertical-text text-policy-text text-xs">
+                &copy; MMXXIV. Made in England.
+            </div>
+        </div>
 
         {% block content %}
         {% endblock content %}

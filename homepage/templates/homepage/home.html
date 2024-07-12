@@ -6,8 +6,8 @@
 
     <div class=" gap-8">
         <!-- <div class="col-span-2"> -->
-            <h1 class="text-6xl md:text-7xl lg:text-8xl font-black mb-2 tracking-tight tracking-wider font-serif font-normal">Hi, my<br>name is <b>Euan</b>.</h1>
-            <p class="text-l md:text-xl lg:text-2xl text-gray-700 font-normal mt-8 mb-8">I'm a <b>machine learning engineer</b> from<br>Kent, United Kingdom.</p>
+        <h1 class="text-6xl md:text-7xl lg:text-8xl font-black mb-2 tracking-tight tracking-wider font-serif font-normal">Hi, my<br>name is <b>Euan</b>.</h1>
+        <p class="text-l md:text-xl lg:text-2xl text-gray-700 font-normal mt-8 mb-8">I'm a <b>machine learning engineer</b> from<br>Kent, United Kingdom.</p>
         <!-- </div> -->
         <!-- <div class="md:col-span-1 hidden md:flex justify-center items-center">
             <div class="aspect-w-1 aspect-h-1">
@@ -25,10 +25,15 @@
     <a href="https://twitter.com/EuanJudd" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-gray-600 ml-8 fa-2x">
         <i class="fab fa-twitter"></i>
     </a>
-    
+
+
+    <div class="flex flex-col items-center">
+        <p class="mb-2 tracking-widest">Scroll</p>
+        <div id="vertical-line" class="vertical-line bg-policy-text" style="height: calc(50vh - 4rem);"></div>
+    </div>
 </header>
 
-<main class="container mx-auto py-24 max-w-6xl mx-auto">
+<main class="container mx-auto py-2 max-w-6xl mx-auto">
     <!-- <span id="lastUpdated" class="text-xs font-bold">
         Last Updated: 2024-07-10
     </span> -->
@@ -75,4 +80,14 @@
         </a>
     </div>
 </main>
+<script>
+    window.addEventListener('scroll', function() {
+        const verticalLine = document.getElementById('vertical-line');
+        const maxHeight = window.innerHeight / 2 - 4 * 16; // Adjusting for rem (4rem)
+        const scrollTop = window.scrollY;
+        const newHeight = Math.max(maxHeight - scrollTop, 24);
+        verticalLine.style.height = `${newHeight}px`;
+    });
+</script>
+
 {% endblock %}
