@@ -1,4 +1,6 @@
+{% extends 'base.html' %}
 <!-- {% load static %} -->
+{% block content %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -63,29 +65,31 @@
         tailwind.config = {
             theme: {
                 extend: {
-                    // colors: {
-                    //     'primary-bg': '#06AB78',            // Green
-                    //     'primary-text': '#FFFFFF',          // White
-                    //     'base-content': '#30313D',          // Almost Black
-                    //     'base-content-secondary': '#5C5B61',// Dark Gray, e.g. for paragraph text
-                    //     'base-bg': '#F8F9FD',               // Almost white
-                    //     'highlight-bg': '#3d3030',          // Brownish black
-                    //     'highlight-text': '#FFFFFF',        // White
-                    //     'border-color-default': '#30313D',  // Almost Black
-                    // },
                     colors: {
-                        'primary-bg': '#ff6600',            // Orange
-                        'primary-hover-bg': '#FF4500',      // Red orange
-                        'primary-text': '#000000',          // Black
-                        'base-content': '#cfcfcf',          // Light gray
-                        'base-content-secondary': '#cfcfcfB3',// Light gray
-                        'base-bg': '#212121FF',             // Almost black
-                        'highlight-bg': '#0f0f0f',          // Black
-                        'highlight-hover-bg': '#000000B3',    // Dark gray
-                        'highlight-text': '#cfcfcf',        // Light gray
-                        'border-color-default': '#5C5B61FF',  // Almost black
-                        'border-color-hover-default': '#ff6600',  // Orange
+                        'primary-bg': '#06AB78',            // Green
+                        'primary-text': '#FFFFFF',          // White
+                        'base-content': '#30313D',          // Almost Black
+                        'base-content-secondary': '#5C5B61',// Dark Gray, e.g. for paragraph text
+                        'base-bg': '#F8F9FD',               // Almost white
+                        'highlight-bg': '#FFFFFF',          // Brownish black
+                        'highlight-hover-bg': '#FFFFFF',    // Dark gray
+                        'highlight-text': '#000000',        // Black
+                        'policy-text': '#919795',           // Lighter gray
+                        'border-color-default': '#FFFFFF',  // Almost Black
                     },
+
+                    // colors: {
+                    //     'primary-bg': '#ff6600',            // Orange
+                    //     'primary-hover-bg': '#FF4500',      // Red orange
+                    //     'primary-text': '#000000',          // Black
+                    //     'base-content': '#cfcfcf',          // Light gray
+                    //     'base-content-secondary': '#cfcfcfB3',// Light gray
+                    //     'base-bg': '#212121FF',             // Almost black
+                    //     'highlight-bg': '#0f0f0f',          // Black
+                    //     'highlight-hover-bg': '#0f0f0f',    // Dark gray
+                    //     'highlight-text': '#cfcfcf',        // Light gray
+                    //     'border-color-default': '#0f0f0f',  // Almost black
+                    // },
                     fontFamily: {
                         'roboto': ['Roboto', 'sans-serif'],
                     },
@@ -108,63 +112,67 @@
         }
     </script>
 </head>
-<body class="bg-base-bg text-base-content font-normal text-base leading-normal">
-    <header class="text-base-content py-16 max-w-6xl mx-auto pb-6">
-        <div class="container mx-auto px-4">
-            <h1 class="text-4xl md:text-5xl lg:text-6xl font-black mb-2 tracking-tight">Euan Judd</h1>
-            <p class="text-xl text-base-content-secondary md:text-2xl">Machine Learning SaaS Portfolio</p>
-        </div>
-    </header>
-    <main class="container mx-auto px-4 py-16 max-w-6xl mx-auto"> 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8"> <!-- lg:grid-cols-3 -->
 
-            <a href="#" class="inline-block">
-                <section class="bg-highlight-bg rounded-xl shadow-md overflow-hidden transition-transform border border-border-color-default hover:border-border-color-hover-default duration-300 hover:scale-105">
-                    <div class="p-6">
-                        <h2 class="text-2xl font-black text-base-content">SummarizerNow</h2>
-                        <p class="text-base-content-secondary">Make your long-form content shorter.</p>
-                        <!-- <a href="#" class="inline-block bg-primary-bg text-primary-text px-6 py-2 rounded-xl hover:bg-primary-hover-bg transition-colors">Learn More</a> -->
-                    </div>
-                </section>
-            </a>
+<body class="bg-heighlight-bg text-base-content font-normal text-base leading-normal p-5">
+    <div class="bg-base-bg">
+        <header class="text-base-content py-16 max-w-6xl mx-auto pb-6">
+            <div class="container mx-auto">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-black mb-2 tracking-tight">Euan Judd</h1>
+                <p class="text-xl text-base-content-secondary md:text-2xl">Machine Learning SaaS Portfolio</p>
+            </div>
+        </header>
+        <main class="container mx-auto py-16 max-w-6xl mx-auto"> 
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8"> <!-- lg:grid-cols-3 -->
 
-            <a href="#" class="inline-block">
-                <section class="bg-highlight-bg rounded-xl shadow-md overflow-hidden transition-transform border border-border-color-default hover:border-border-color-hover-default duration-300 hover:scale-105">
-                    <div class="p-6">
-                        <h2 class="text-2xl font-black text-base-content">EquipmentPrevent</h2>
-                        <p class="text-base-content-secondary">Predict potential failures of your industrial equipment.</p>
-                        <!-- <a href="#" class="inline-block bg-primary-bg text-primary-text px-6 py-2 rounded-xl hover:bg-primary-hover-bg transition-colors">Learn More</a> -->
-                    </div>
-                </section>
-            </a>
+                <a href="#" class="inline-block">
+                    <section class="bg-highlight-bg hover:bg-highlight-hover-bg rounded-xl shadow-md overflow-hidden transition-transform border border-border-color-default duration-300 hover:scale-105">
+                        <div class="p-6">
+                            <h2 class="text-2xl font-black text-base-content">SummarizerNow</h2>
+                            <p class="text-base-content-secondary">Make your long-form content shorter.</p>
+                            <!-- <a href="#" class="inline-block bg-primary-bg text-primary-text px-6 py-2 rounded-xl hover:bg-primary-hover-bg transition-colors">Learn More</a> -->
+                        </div>
+                    </section>
+                </a>
 
-            <a href="#" class="inline-block">
-                <section class="bg-highlight-bg rounded-xl shadow-md overflow-hidden transition-transform border border-border-color-default hover:border-border-color-hover-default duration-300 hover:scale-105">
-                    <div class="p-6">
-                        <h2 class="text-2xl font-black text-base-content">GiftSuggest</h2>
-                        <p class="text-base-content-secondary">Predict what your family want using chat logs.</p>
-                        <!-- <a href="#" class="inline-block bg-primary-bg text-primary-text px-6 py-2 rounded-xl hover:bg-primary-hover-bg transition-colors">Learn More</a> -->
-                    </div>
-                </section>
-            </a>
+                <a href="#" class="inline-block">
+                    <section class="bg-highlight-bg hover:bg-highlight-hover-bg rounded-xl shadow-md overflow-hidden transition-transform border border-border-color-default duration-300 hover:scale-105">
+                        <div class="p-6">
+                            <h2 class="text-2xl font-black text-base-content">EquipmentPrevent</h2>
+                            <p class="text-base-content-secondary">Predict potential failures of your industrial equipment.</p>
+                            <!-- <a href="#" class="inline-block bg-primary-bg text-primary-text px-6 py-2 rounded-xl hover:bg-primary-hover-bg transition-colors">Learn More</a> -->
+                        </div>
+                    </section>
+                </a>
 
-            <a href="#" class="inline-block">
-                <section class="bg-highlight-bg hover:bg-highlight-hover-bg rounded-xl shadow-md overflow-hidden transition-transform border border-border-color-default hover:border-border-color-hover-default duration-300 hover:scale-105">
-                    <div class="p-6">
-                        <h2 class="text-2xl font-black text-base-content">CitationFast</h2>
-                        <p class="text-base-content-secondary">Write your literature review in hours, not days.</p>
-                        <!-- <a href="#" class="inline-block bg-primary-bg text-primary-text px-6 py-2 rounded-xl hover:bg-primary-hover-bg transition-colors text-sm">Visit CitationEngine</a> -->
-                        <!-- <span class="inline-block bg-primary-bg text-primary-text px-6 py-2 rounded-xl hover:bg-primary-hover-bg transition-colors text-sm">Visit CitationEngine</span> -->
-                    </div>
-                </section>
-            </a>
-        </div>
-    </main>
+                <a href="#" class="inline-block">
+                    <section class="bg-highlight-bg hover:bg-highlight-hover-bg rounded-xl shadow-md overflow-hidden transition-transform border border-border-color-default duration-300 hover:scale-105">
+                        <div class="p-6">
+                            <h2 class="text-2xl font-black text-base-content">GiftSuggest</h2>
+                            <p class="text-base-content-secondary">Predict what your family want using chat logs.</p>
+                            <!-- <a href="#" class="inline-block bg-primary-bg text-primary-text px-6 py-2 rounded-xl hover:bg-primary-hover-bg transition-colors">Learn More</a> -->
+                        </div>
+                    </section>
+                </a>
 
-    <footer class="bg-highlight-bg text-highlight-text py-8">
-        <div class="container mx-auto px-4 text-center">
-            <p>&copy; 2024 Euan Judd. All rights reserved.</p>
-        </div>
-    </footer>
+                <a href="#" class="inline-block">
+                    <section class="bg-highlight-bg hover:bg-highlight-hover-bg rounded-xl shadow-md overflow-hidden transition-transform border border-border-color-default duration-300 hover:scale-105">
+                        <div class="p-6">
+                            <h2 class="text-2xl font-black text-base-content">CitationFast</h2>
+                            <p class="text-base-content-secondary">Write your literature review in hours, not days.</p>
+                            <!-- <a href="#" class="inline-block bg-primary-bg text-primary-text px-6 py-2 rounded-xl hover:bg-primary-hover-bg transition-colors text-sm">Visit CitationEngine</a> -->
+                            <!-- <span class="inline-block bg-primary-bg text-primary-text px-6 py-2 rounded-xl hover:bg-primary-hover-bg transition-colors text-sm">Visit CitationEngine</span> -->
+                        </div>
+                    </section>
+                </a>
+            </div>
+        </main>
+
+        <footer class="bg-base-bg text-policy-text py-8 text-sm">
+            <div class="container mx-auto px-4 text-center">
+                <p>&copy; MMXXIV. Made in England.</p>
+            </div>
+        </footer>
+    </div>
 </body>
 </html>
+{% endblock %}

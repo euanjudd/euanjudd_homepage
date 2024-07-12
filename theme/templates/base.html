@@ -1,5 +1,5 @@
-{% load static tailwind_tags %}
-<!DOCTYPE html>
+<!-- {% load static tailwind_tags %} -->
+<!-- <!DOCTYPE html>
 <html lang="en">
 	<head>
     <title>Django Tailwind</title>
@@ -16,4 +16,33 @@
 			</section>
 		</div>
 	</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Django Project</title>
+    <link rel="icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"> -->
+    <!-- Add other head elements or links to CSS files -->
+</head>
+<body>
+    <header class="bg-gray-800 text-white p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="{% url 'home' %}">
+                <img src="{% static 'images/home_icon.png' %}" alt="Home" class="h-8">
+            </a>
+            <!-- Placeholder for future navigation menu -->
+        </div>
+    </header>
+
+    {% block content %}
+    {% endblock content %}
+
+    <footer class="bg-gray-800 text-white text-center p-4">
+        © MMXXIV. Made in England.
+    </footer>
+</body>
 </html>
