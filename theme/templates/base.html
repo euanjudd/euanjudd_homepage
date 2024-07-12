@@ -1,48 +1,101 @@
-<!-- {% load static tailwind_tags %} -->
-<!-- <!DOCTYPE html>
-<html lang="en">
-	<head>
-    <title>Django Tailwind</title>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta http-equiv="X-UA-Compatible" content="ie=edge">
-		{% tailwind_css %}
-	</head>
-
-	<body class="bg-gray-50 font-serif leading-normal tracking-normal">
-		<div class="container mx-auto">
-			<section class="flex items-center justify-center h-screen">
-				<h1 class="text-5xl">Django + Tailwind = ❤️</h1>
-			</section>
-		</div>
-	</body>
-</html> -->
-
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Django Project</title>
+    <title>Euan Judd - Machine Learning SaaS Portfolio</title>
     <link rel="icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"> -->
     <!-- Add other head elements or links to CSS files -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-bg': '#06AB78',            // Green
+                        'primary-hover-bg': '#06AB78F2',
+                        'primary-text': '#FFFFFF',          // White
+                        'base-content': '#30313D',          // Almost Black
+                        'base-content-secondary': '#5C5B61',// Dark Gray, e.g. for paragraph text
+                        'base-bg': '#F8F9FD',               // Almost white
+                        'highlight-bg': '#FFFFFF',          // Brownish black
+                        'highlight-hover-bg': '#FFFFFF',    // Dark gray
+                        'highlight-text': '#000000',        // Black
+                        'policy-text': '#919795',           // Lighter gray
+                        'border-color-default': '#FFFFFF',  // Almost Black
+                    },
+
+                    // colors: {
+                    //     'primary-bg': '#ff6600',            // Orange
+                    //     'primary-hover-bg': '#FF4500',      // Red orange
+                    //     'primary-text': '#000000',          // Black
+                    //     'base-content': '#cfcfcf',          // Light gray
+                    //     'base-content-secondary': '#cfcfcfB3',// Light gray
+                    //     'base-bg': '#212121FF',             // Almost black
+                    //     'highlight-bg': '#0f0f0f',          // Black
+                    //     'highlight-hover-bg': '#0f0f0f',    // Dark gray
+                    //     'highlight-text': '#cfcfcf',        // Light gray
+                    //     'border-color-default': '#0f0f0f',  // Almost black
+                    // },
+                    fontFamily: {
+                        'roboto': ['Roboto', 'sans-serif'],
+                    },
+                    fontSize: {
+                        'base': '16px',
+                    },
+                    fontWeight: {
+                        'normal': '400',
+                        'black': '900',
+                    },
+                    letterSpacing: {
+                        'tight': '-0.4px',
+                    },
+                    lineHeight: {
+                        'tight': '1',
+                        'normal': '1.625',
+                    },
+                }
+            }
+        }
+    </script>
 </head>
-<body>
-    <header class="bg-gray-800 text-white p-4">
-        <div class="container mx-auto flex justify-between items-center">
-            <a href="{% url 'home' %}">
-                <img src="{% static 'images/home_icon.png' %}" alt="Home" class="h-8">
-            </a>
-            <!-- Placeholder for future navigation menu -->
-        </div>
-    </header>
 
-    {% block content %}
-    {% endblock content %}
+<body class="bg-heighlight-bg text-base-content font-normal text-base leading-normal p-5">
 
-    <footer class="bg-gray-800 text-white text-center p-4">
-        © MMXXIV. Made in England.
-    </footer>
+    <div class="bg-base-bg p-6">
+
+        <header class="container mx-auto text-base-content py-2 max-w-7xl mx-auto">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <a href="{% url 'home' %}">
+                        <img src="{% static 'images/home_icon.png' %}" alt="Home" class="h-16">
+                    </a>
+                    <span class="menu-text ml-8 hover:tracking-widest text-xs font-bold">
+                        MENU
+                    </span>
+                </div>
+                <span class="contact-text hover:tracking-widest text-xs font-bold">
+                    CONTACT ME
+                </span>
+                <!-- Placeholder for future navigation menu -->
+            </div>
+        </header>
+        
+
+        {% block content %}
+        {% endblock content %}
+
+        <footer class="bg-base-bg text-policy-text py-8 text-sm">
+            <div class="container mx-auto px-4 text-center">
+                <p>&copy; MMXXIV. Made in England.</p>
+            </div>
+        </footer>
+    </div>
 </body>
 </html>

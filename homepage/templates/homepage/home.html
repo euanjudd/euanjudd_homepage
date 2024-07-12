@@ -1,178 +1,75 @@
 {% extends 'base.html' %}
-<!-- {% load static %} -->
 {% block content %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Euan Judd - Machine Learning SaaS Portfolio</title>
-    <!-- <link href="{% static 'styles.css' %}" rel="stylesheet"> -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
-    <!-- <style>
-        :root {
-            /* Colors */
-            --primary-bg: #06AB78;
-            --primary-text: #FFFFFF;
-            --base-content: #30313D;
-            --base-content-secondary: #5C5B61;
-            --base-bg: #F8F9FD;
-            --highlight-bg: #3d3030;
-            --highlight-text: #FFFFFF;
-            --border-color-default: #30313D;
-    
-            /* Font Sizes */
-            --font-size-base: 16px;
-    
-            /* Font Weights */
-            --font-weight-normal: 400;
-            --font-weight-black: 900;
-    
-            /* Letter Spacing */
-            --letter-spacing-tight: -0.4px;
-    
-            /* Line Heights */
-            --line-height-tight: 1;
-            --line-height-normal: 1.625;
-    
-            /* Font Family */
-            --font-family-sans: Arial, Helvetica, sans-serif;
-        }
-    
-        /* Additional CSS to replace Tailwind utilities */
-        body {
-            background-color: var(--base-bg);
-            color: var(--base-content);
-            font-family: var(--font-family-sans);
-            font-weight: var(--font-weight-normal);
-            font-size: var(--font-size-base);
-            line-height: var(--line-height-normal);
-        }
-    
-        .bg-primary {
-            background-color: var(--primary-bg);
-        }
-    
-        .text-primary {
-            color: var(--primary-text);
-        }
-    
-        /* Add more utility classes as needed */
-    </style> -->
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'primary-bg': '#06AB78',            // Green
-                        'primary-text': '#FFFFFF',          // White
-                        'base-content': '#30313D',          // Almost Black
-                        'base-content-secondary': '#5C5B61',// Dark Gray, e.g. for paragraph text
-                        'base-bg': '#F8F9FD',               // Almost white
-                        'highlight-bg': '#FFFFFF',          // Brownish black
-                        'highlight-hover-bg': '#FFFFFF',    // Dark gray
-                        'highlight-text': '#000000',        // Black
-                        'policy-text': '#919795',           // Lighter gray
-                        'border-color-default': '#FFFFFF',  // Almost Black
-                    },
+<header class="container mx-auto text-base-content py-24 max-w-6xl mx-auto pb-6">
 
-                    // colors: {
-                    //     'primary-bg': '#ff6600',            // Orange
-                    //     'primary-hover-bg': '#FF4500',      // Red orange
-                    //     'primary-text': '#000000',          // Black
-                    //     'base-content': '#cfcfcf',          // Light gray
-                    //     'base-content-secondary': '#cfcfcfB3',// Light gray
-                    //     'base-bg': '#212121FF',             // Almost black
-                    //     'highlight-bg': '#0f0f0f',          // Black
-                    //     'highlight-hover-bg': '#0f0f0f',    // Dark gray
-                    //     'highlight-text': '#cfcfcf',        // Light gray
-                    //     'border-color-default': '#0f0f0f',  // Almost black
-                    // },
-                    fontFamily: {
-                        'roboto': ['Roboto', 'sans-serif'],
-                    },
-                    fontSize: {
-                        'base': '16px',
-                    },
-                    fontWeight: {
-                        'normal': '400',
-                        'black': '900',
-                    },
-                    letterSpacing: {
-                        'tight': '-0.4px',
-                    },
-                    lineHeight: {
-                        'tight': '1',
-                        'normal': '1.625',
-                    },
-                }
-            }
-        }
-    </script>
-</head>
+    <h1 class="text-6xl md:text-7xl lg:text-8xl font-black mb-2 tracking-tight tracking-wider">Euan Judd</h1>
+    <p class="text-l md:text-xl lg:text-2xl text-base-content-secondary font-normal mt-8 mb-8">I'm a <b>machine learning engineer</b> from<br>Kent, United Kingdom.</p>
 
-<body class="bg-heighlight-bg text-base-content font-normal text-base leading-normal p-5">
-    <div class="bg-base-bg">
-        <header class="text-base-content py-16 max-w-6xl mx-auto pb-6">
-            <div class="container mx-auto">
-                <h1 class="text-4xl md:text-5xl lg:text-6xl font-black mb-2 tracking-tight">Euan Judd</h1>
-                <p class="text-xl text-base-content-secondary md:text-2xl">Machine Learning SaaS Portfolio</p>
-            </div>
-        </header>
-        <main class="container mx-auto py-16 max-w-6xl mx-auto"> 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8"> <!-- lg:grid-cols-3 -->
+    <a href="https://www.linkedin.com/in/euan-judd-749b04116/" class="text-gray-300 hover:text-gray-600 ml-2 fa-2x">
+        <i class="fab fa-linkedin"></i>
+    </a>
+    <a href="https://github.com/euanjudd" class="text-gray-300 hover:text-gray-600 ml-8 fa-2x">
+        <i class="fab fa-github"></i>
+    </a>
+    <a href="https://twitter.com/EuanJudd" class="text-gray-300 hover:text-gray-600 ml-8 fa-2x">
+        <i class="fab fa-twitter"></i>
+    </a>
+    
+</header>
 
-                <a href="#" class="inline-block">
-                    <section class="bg-highlight-bg hover:bg-highlight-hover-bg rounded-xl shadow-md overflow-hidden transition-transform border border-border-color-default duration-300 hover:scale-105">
-                        <div class="p-6">
-                            <h2 class="text-2xl font-black text-base-content">SummarizerNow</h2>
-                            <p class="text-base-content-secondary">Make your long-form content shorter.</p>
-                            <!-- <a href="#" class="inline-block bg-primary-bg text-primary-text px-6 py-2 rounded-xl hover:bg-primary-hover-bg transition-colors">Learn More</a> -->
-                        </div>
-                    </section>
-                </a>
+<main class="container mx-auto py-24 max-w-6xl mx-auto">
 
-                <a href="#" class="inline-block">
-                    <section class="bg-highlight-bg hover:bg-highlight-hover-bg rounded-xl shadow-md overflow-hidden transition-transform border border-border-color-default duration-300 hover:scale-105">
-                        <div class="p-6">
-                            <h2 class="text-2xl font-black text-base-content">EquipmentPrevent</h2>
-                            <p class="text-base-content-secondary">Predict potential failures of your industrial equipment.</p>
-                            <!-- <a href="#" class="inline-block bg-primary-bg text-primary-text px-6 py-2 rounded-xl hover:bg-primary-hover-bg transition-colors">Learn More</a> -->
-                        </div>
-                    </section>
-                </a>
+    <div class="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 gap-8"> <!-- lg:grid-cols-3 -->
 
-                <a href="#" class="inline-block">
-                    <section class="bg-highlight-bg hover:bg-highlight-hover-bg rounded-xl shadow-md overflow-hidden transition-transform border border-border-color-default duration-300 hover:scale-105">
-                        <div class="p-6">
-                            <h2 class="text-2xl font-black text-base-content">GiftSuggest</h2>
-                            <p class="text-base-content-secondary">Predict what your family want using chat logs.</p>
-                            <!-- <a href="#" class="inline-block bg-primary-bg text-primary-text px-6 py-2 rounded-xl hover:bg-primary-hover-bg transition-colors">Learn More</a> -->
-                        </div>
-                    </section>
-                </a>
+        <a href="#" class="inline-block">
+            <section class="bg-highlight-bg hover:bg-highlight-hover-bg rounded-xl shadow-md overflow-hidden transition-transform border border-border-color-default duration-300 hover:scale-105">
+                <div class="p-6">
+                    <h2 class="text-2xl font-black text-base-content">SummarizerNow</h2>
+                    <p class="text-base-content-secondary">Make your long-form content shorter.</p>
+                    <!-- <p class="text-base-content-secondary text-sm mt-2">github.com</p> -->
+                    <!-- <div class="mt-2"><span class="bg-primary-bg text-primary-text text-sm rounded-full px-2 py-1 hover:bg-primary-hover-bg">github.com</span></div> -->
+                    <!-- <a href="#" class="inline-block bg-primary-bg text-primary-text px-6 py-2 rounded-xl hover:bg-primary-hover-bg transition-colors">Learn More</a> -->
+                </div>
+            </section>
+        </a>
 
-                <a href="#" class="inline-block">
-                    <section class="bg-highlight-bg hover:bg-highlight-hover-bg rounded-xl shadow-md overflow-hidden transition-transform border border-border-color-default duration-300 hover:scale-105">
-                        <div class="p-6">
-                            <h2 class="text-2xl font-black text-base-content">CitationFast</h2>
-                            <p class="text-base-content-secondary">Write your literature review in hours, not days.</p>
-                            <!-- <a href="#" class="inline-block bg-primary-bg text-primary-text px-6 py-2 rounded-xl hover:bg-primary-hover-bg transition-colors text-sm">Visit CitationEngine</a> -->
-                            <!-- <span class="inline-block bg-primary-bg text-primary-text px-6 py-2 rounded-xl hover:bg-primary-hover-bg transition-colors text-sm">Visit CitationEngine</span> -->
-                        </div>
-                    </section>
-                </a>
-            </div>
-        </main>
+        <a href="#" class="inline-block">
+            <section class="bg-highlight-bg hover:bg-highlight-hover-bg rounded-xl shadow-md overflow-hidden transition-transform border border-border-color-default duration-300 hover:scale-105">
+                <div class="p-6">
+                    <h2 class="text-2xl font-black text-base-content">EquipmentPrevent</h2>
+                    <p class="text-base-content-secondary">Predict potential failures of your industrial equipment.</p>
+                    <!-- <p class="text-base-content-secondary text-sm mt-2">github.com</p> -->
+                    <!-- <div class="mt-2"><span class="bg-primary-bg text-primary-text text-sm rounded-full px-2 py-1 hover:bg-primary-hover-bg">github.com</span></div> -->
+                    <!-- <a href="#" class="inline-block bg-primary-bg text-primary-text px-6 py-2 rounded-xl hover:bg-primary-hover-bg transition-colors">Learn More</a> -->
+                </div>
+            </section>
+        </a>
 
-        <footer class="bg-base-bg text-policy-text py-8 text-sm">
-            <div class="container mx-auto px-4 text-center">
-                <p>&copy; MMXXIV. Made in England.</p>
-            </div>
-        </footer>
+        <a href="#" class="inline-block">
+            <section class="bg-highlight-bg hover:bg-highlight-hover-bg rounded-xl shadow-md overflow-hidden transition-transform border border-border-color-default duration-300 hover:scale-105">
+                <div class="p-6">
+                    <h2 class="text-2xl font-black text-base-content">GiftSuggest</h2>
+                    <p class="text-base-content-secondary">Predict what your family want using chat logs.</p>
+                    <!-- <p class="text-base-content-secondary text-sm mt-2">github.com</p> -->
+                    <!-- <div class="mt-2"><span class="bg-primary-bg text-primary-text text-sm rounded-full px-2 py-1 hover:bg-primary-hover-bg">github.com</span></div> -->
+                    <!-- <a href="#" class="inline-block bg-primary-bg text-primary-text px-6 py-2 rounded-xl hover:bg-primary-hover-bg transition-colors">Learn More</a> -->
+                </div>
+            </section>
+        </a>
+
+        <a href="#" class="inline-block">
+            <section class="bg-highlight-bg hover:bg-highlight-hover-bg rounded-xl shadow-md overflow-hidden transition-transform border border-border-color-default duration-300 hover:scale-105">
+                <div class="p-6">
+                    <h2 class="text-2xl font-black text-base-content">CitationFast</h2>
+                    <p class="text-base-content-secondary">Write your literature review in hours, not days.</p>
+                    <!-- <p class="text-base-content-secondary text-sm mt-2">github.com</p> -->
+                    <!-- <div class="mt-2"><span class="bg-primary-bg text-primary-text text-sm rounded-full px-2 py-1 hover:bg-primary-hover-bg">github.com</span></div> -->
+                    <!-- <a href="#" class="inline-block bg-primary-bg text-primary-text px-6 py-2 rounded-xl hover:bg-primary-hover-bg transition-colors text-sm">Visit CitationEngine</a> -->
+                    <!-- <span class="inline-block bg-primary-bg text-primary-text px-6 py-2 rounded-xl hover:bg-primary-hover-bg transition-colors text-sm">Visit CitationEngine</span> -->
+                </div>
+            </section>
+        </a>
     </div>
-</body>
-</html>
+</main>
 {% endblock %}
