@@ -104,7 +104,7 @@
 
         <div class="fixed-bottom flex p-6 items-end hidden lg:flex">
             <div class="vertical-text text-policy-text text-xs">
-                &copy; <span id="currentYear"></span>. Made in England.
+                &copy; <span id="yearSidebar"></span>. Made in England.
             </div>
         </div>
 
@@ -113,7 +113,7 @@
 
         <footer class="bg-base-bg text-policy-text py-4 pt-32 text-xs">
             <div class="container mx-auto px-4 text-center">
-                <!-- <p>&copy; MMXXIV. Made in England.</p> -->
+                <p class="lg:hidden">&copy; <span id="yearFooter"></span>. Made in England.</p>
             </div>
         </footer>
     </div>
@@ -148,9 +148,11 @@
                 return result;
             }
     
-            const yearSpan = document.getElementById('currentYear');
+            const yearSpanSidebar = document.getElementById('yearSidebar');
+            const yearSpanFooter = document.getElementById('yearFooter');
             const currentYear = new Date().getFullYear();
-            yearSpan.textContent = convertToRoman(currentYear);
+            yearSpanSidebar.textContent = convertToRoman(currentYear);
+            yearSpanFooter.textContent = convertToRoman(currentYear);
         });
     </script>
 </body>
