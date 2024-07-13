@@ -104,20 +104,54 @@
 
         <div class="fixed-bottom flex p-6 items-end hidden lg:flex">
             <div class="vertical-text text-policy-text text-xs">
-                &copy; MMXXIV. Made in England.
+                &copy; <span id="currentYear"></span>. Made in England.
             </div>
         </div>
 
         {% block content %}
         {% endblock content %}
 
-        <footer class="bg-base-bg text-policy-text py-4 pt-32 text-sm">
+        <footer class="bg-base-bg text-policy-text py-4 pt-32 text-xs">
             <div class="container mx-auto px-4 text-center">
-                <p>&copy; MMXXIV. Made in England.</p>
+                <!-- <p>&copy; MMXXIV. Made in England.</p> -->
             </div>
         </footer>
     </div>
 
     <script src="{% static 'src/js/dropdown.js' %}"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            function convertToRoman(num) {
+                const romanNumerals = [
+                    ["M", 1000],
+                    ["CM", 900],
+                    ["D", 500],
+                    ["CD", 400],
+                    ["C", 100],
+                    ["XC", 90],
+                    ["L", 50],
+                    ["XL", 40],
+                    ["X", 10],
+                    ["IX", 9],
+                    ["V", 5],
+                    ["IV", 4],
+                    ["I", 1]
+                ];
+    
+                let result = '';
+                for (const [roman, value] of romanNumerals) {
+                    while (num >= value) {
+                        result += roman;
+                        num -= value;
+                    }
+                }
+                return result;
+            }
+    
+            const yearSpan = document.getElementById('currentYear');
+            const currentYear = new Date().getFullYear();
+            yearSpan.textContent = convertToRoman(currentYear);
+        });
+    </script>
 </body>
 </html>
