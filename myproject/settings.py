@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'homepage',
     'tailwind',
     'theme',
+    'ml_projects',
 ]
 
 MIDDLEWARE = [

@@ -20,6 +20,7 @@ from django.urls import include, path
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('homepage.urls')),
+    path('SuumoMax/', include('ml_projects.urls')),
 ]
 
 # #  Serve static files in development environment
@@ -28,4 +29,3 @@ urlpatterns = [
 
 # if settings.DEBUG:
 #     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-

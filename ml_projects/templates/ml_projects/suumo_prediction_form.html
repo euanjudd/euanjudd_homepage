@@ -1,0 +1,36 @@
+<form id="predictionForm" method="post">
+    {% csrf_token %}
+    <input type="url" name="url" required>
+    <button type="submit">Make Prediction</button>
+</form>
+
+<div id="predictionResult" style="display:none;">
+    <h2>Prediction Result:</h2>
+    <p id="result"></p>
+</div>
+
+<div id="loading" style="display:none;">Loading...</div>
+
+<script>
+document.getElementById('predictionForm').onsubmit = function(event) {
+    event.preventDefault();
+    const formData = new FormData(this);
+    document.getElementById('loading').style.display = 'block'; // Show loading indicator
+
+    fetch('', {
+        method: 'POST',
+        body: formData,
+        headers: {'X-CSRFToken': formData.get('csrfmiddlewaretoken')}
+    }).then(response => response.json())
+      .then(data => {
+          document.getElementById('loading').style.display = 'none'; // Hide loading indicator
+          document.getElementById('result').textContent = data.prediction; // Display the result
+          document.getElementById('predictionResult').style.display = 'block';
+      })
+      .catch(error => {
+          console.error('Error:', error);
+          document.getElementById('loading').style.display = 'none';
+          alert('Failed to fetch prediction');
+      });
+};
+</script>
